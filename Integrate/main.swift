@@ -25,7 +25,7 @@ print("""
 Entre com a sentença matemática:
 """)
 
-// Utiliza o readline para pegar a equação digitada pelo usuario.
+// Utiliza o readline para pegar a equação digitada pelo usúario.
 while let input = readLine() {
     guard input.lowercased() != "quit", input.lowercased() != "q" else {
         print("-------------------------------------------------------\n")
@@ -51,7 +51,7 @@ while let input = readLine() {
     }
 }
 
-// Utiliza o readline para pegar os intervalos digitado pelo usuario.
+// Utiliza o readline para pegar os intervalos digitados pelo usúario.
 print("""
 Agora, digite os intervalos:
 ex: 1, 2
@@ -77,13 +77,13 @@ while let input = readLine() {
     }
 }
 
-/* Tranforma a função que o usúario digitou: numeros para double,
-    operadores e variaveis para a biblioteca pode usar. */
+/* Tranforma a função que o usúario digitou: números para double,
+    operadores e variáveis para a biblioteca pode usar. */
 public func integral(fullFunction: [Any], x: Double) -> Double {
     var variable: Double = 0.0
     var i = 0
     
-    // Converte numeros para double, operadores e variaveis.
+    // Converte números para double, operadores e variáveis.
     while fullFunction.count > i {
         let current_element = fullFunction[i]
         
@@ -94,7 +94,7 @@ public func integral(fullFunction: [Any], x: Double) -> Double {
         else if let mathOperator = current_element as? String, mathOperations.contains(mathOperator) == true {
             let next_element = fullFunction[i + 1]
             
-            // Caso tiver parenteses na função
+            // Caso tiver parênteses na função.
             if let parentheses = next_element as? String, parentheses == "(" {
                 var functionInsideParentheses = [Any]()
                 i += 2
@@ -110,7 +110,7 @@ public func integral(fullFunction: [Any], x: Double) -> Double {
                     break
                 }
                 
-                // Adequa a parte a função que está dentro do parenteses.
+                // Adequa a parte a função que está dentro do parênteses.
                 switch mathOperator {
                 case "+":
                     variable += (integral(fullFunction: functionInsideParentheses, x: x))
@@ -150,7 +150,7 @@ public func integral(fullFunction: [Any], x: Double) -> Double {
     return variable
 }
 
-// Função que converte os elementos numericos da função digitada pelo usuario para Double.
+// Função que converte os elementos numéricos da função digitada pelo usuário para double.
 public func convertToDouble(element: Any, x: Double) -> Double {
     var convertedValue: Double = 0.00
     if let value = element as? String, value == "x"  {
@@ -163,7 +163,7 @@ public func convertToDouble(element: Any, x: Double) -> Double {
     return convertedValue
 }
 
-// Configurações padrão do Quadrature sobre intervalos maximo e tolerancia de erros.
+// Configurações padrão do Quadrature sobre intervalos máximo e tolerância de erros.
 let quadrature = Quadrature(integrator:.qags(maxIntervals: 10000),
                             absoluteTolerance: 1.0e-8,
                             relativeTolerance: 1.0e-2)
