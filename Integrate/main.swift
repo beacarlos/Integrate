@@ -176,7 +176,7 @@ let result = quadrature.integrate(over: range) { x in
 // Mostra o resultado (sucesso ou erro) do cálculo da integral.
 switch result {
     case .success(let integralResult):
-        print("Integral calculada:", integralResult)
+        print("Integral calculada:\n\(integralResult)")
     case .failure(let error):
         print("Erro no cálculo da integral:", error.errorDescription)
 }
