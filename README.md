@@ -1,5 +1,5 @@
 # Integrate - Calculo de integrais: 📚🧐
-Project developed by Beatriz Carlos and Ronaldo Gomes, students of the Apple Developper Academy (IFCE). Using the native Swift library Quadrature we try to generate a terminal script where we create an integrals calculator.
+Projeto desenvolvido por Beatriz Carlos e Ronaldo Gomes, alunos da Apple Developper Academy (IFCE). Usando a biblioteca Swift nativa Quadrature desenvolvemos um script de terminal onde criamos uma calculadora de integrais.
 
 Esse script resolve integrais definidas.
 
