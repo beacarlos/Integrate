@@ -17,9 +17,9 @@ enum TypeInput{
     var description: String {
         switch self {
         case .function:
-            return "funçao"
+            return "a funçao"
         case .interval:
-            return "intervalo"
+            return "os intervalos"
         }
     }
 }
@@ -35,12 +35,12 @@ extension String {
 func mostraOpcoes(type: TypeInput, input: String){
         print("""
 
-        Você digitou: \(input)
+        Você digitou \(type.description): \(input)
 
         -------------------------------------------------------
-        Deseja alterar: \(type.description)?
-        ✅  Sim? Então digite novamente.
-        ❌  Não? Então digite "quit" ou "q".
+        
+        ✅  Correto? Digite "sim" ou "s".
+        ❌  Não? Então digite novamente a função.
         """)
 }
 
@@ -60,9 +60,8 @@ Digite * para multiplicação
 Digite / para divisão
 Digite x para representar a variavel da função
 Digite ( ) para inserir parenteses
-Não insira um bloco de parenteses dentro de outro. Exemplo: ( ( ) )
-Digite todos os elementos separados por um espaço em branco
-Exemplo de um modelo de função: x / ( 2 * x )
+Exemplo de um modelo de função: x + 1 / ( 2*x - 5 )
+
 """)
 
 print("""
@@ -71,7 +70,7 @@ Entre com a sentença matemática:
 
 // Utiliza o readline para pegar a equação digitada pelo usúario.
 while let input = readLine() {
-    guard input.lowercased() != "quit", input.lowercased() != "q" else {
+    guard input.lowercased() != "sim", input.lowercased() != "s" else {
         print("-------------------------------------------------------\n")
         break
     }
@@ -91,7 +90,7 @@ Agora, digite os intervalos:
 ex: 1, 2
 """)
 while let input = readLine() {
-    guard input.lowercased() != "quit", input.lowercased() != "q" else {
+    guard input.lowercased() != "sim", input.lowercased() != "s" else {
         print("-------------------------------------------------------\n")
         break
     }
