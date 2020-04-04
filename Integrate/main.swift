@@ -73,14 +73,28 @@ func inputUsuario(tipodeInput: TypeInput){
                 continue
             }
         }
-        
         else if tipodeInput == TypeInput.interval {
             
             // Utiliza o readline para pegar os intervalos digitados pelo usúario.
-            intervalos = input.components(separatedBy: ", ")
-            if intervalos.count == 2 {
-                range = Double(intervalos[0])! ... Double(intervalos[1])!
+            intervalos = input.components(separatedBy: ",")
+            if intervalos.count == 2 && intervalos[0] < intervalos[1]{
+                
+                //Verifica de os intervalos foram digitados corretamente
+                guard let primeiroIntervalo = Double(intervalos[0]) else {
+                    print("Primeiro intervalo inválido, digite novamente:")
+                    continue
+                }
+                guard let segundoIntervalo = Double(intervalos[1]) else {
+                    print("Segundo intervalo inválido, digite novamente:")
+                    continue
+                }
+                
+                
+                range = primeiroIntervalo ... segundoIntervalo
                 mostraOpcoes(type: TypeInput.interval, input: input)
+            }
+            else {
+                print("Dados invalidos, digite novamente:")
             }
         }
     }
@@ -111,7 +125,7 @@ func Menu() {
     // Utiliza o readline para pegar os intervalos digitados pelo usúario.
     print("""
     Agora, digite os intervalos:
-    ex: 1, 2
+    ex: 1,2
     """)
     
     inputUsuario(tipodeInput: TypeInput.interval)
