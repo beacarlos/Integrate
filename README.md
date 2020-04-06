@@ -10,6 +10,7 @@ Esse script resolve integrais definidas.
 * Digite / para divisão
 * Digite x para representar a variavel da função
 * Digite ( ) para inserir parenteses
-* Digite todos os elementos separados por um espaço em branco
+* Digite x para representar a variavel da função
+* Digite ( ) para inserir parenteses
 
-Exemplo de um modelo de função: x / ( 2 * x )
+Exemplo de um modelo de função: x + 1 / ( 2*x - 5 )
