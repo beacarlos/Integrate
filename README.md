@@ -14,3 +14,5 @@ Esse script resolve integrais definidas.
 * Digite ( ) para inserir parenteses
 
 Exemplo de um modelo de função: x + 1 / ( 2*x - 5 )
+
+Se quiser nos dar susgestões de melhoria ou correção de bugs pode abrir uma **issue** e/ou dar um **pull request** que vamos analizar com carinho, cada melhoria é bem vinda!
